@@ -3,13 +3,45 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Library Management App</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src='Library.js'></script>
+
+    <!-- <style>
+        p {
+          background-image: url('Lib.jpg');
+        }
+        </style> -->
+    
+    <!--Font-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==
+    " crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="library.css">
 </head>
 <body>
-    <p1>dele state</p1>
-    <h4>testing</h4>
+    <div class="wrapper">
+
+        <!-- logo -->
+        <div class="logo">
+            <div class="container">
+            <p>5ive<span>Library.</span></p>
+    </div>
+
+    <!-- Searching the container-->
+
+    <div class="search-container">
+        <div class = "search-element">
+            <h3>Book Search:</h3>
+            <input type="text" class="search-input"
+             placeholder="Search Book Title..." id="
+             book-search-box" onkeyup="findBooks()">
+
+             <div class = "search-list" id = "search-list">
+                </div>
+                </div>
+        </div>
 </body>
 </html>

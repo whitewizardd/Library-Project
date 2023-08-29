@@ -1,3 +1,74 @@
-body{
-    background-color: crimson;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=swap');
+
+:root{
+    --md-dark-color: #1d1d1d;
+    --dark-color: #171717;
+    --light-dark-color: #292929;
+    --yellow-color: #d4aa11;
+    --webkit-column-rule: rgb(80, 70, 90);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box,
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eee3ee;
+    background-image:url("Lib.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    
+}
+
+a{
+    text-decoration: none;
+}
+.search-container{
+    background-color: var(--md-dark-color);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    font-size: 2rem;
+    color:#fff;
+    font-weight: bold;
+}
+.logo p span{
+    color: var(--yellow-color);
+}
+.search-element{
+    align-self: center;
+    margin-right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.search-element .search-input{
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    outline: none;
+    color: var(--light-dark-color);
+    width: 350px;
+}
+.search-list{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    max-height: 500px;
+    overflow-y: scroll;
+    z-index: 10;
 }
