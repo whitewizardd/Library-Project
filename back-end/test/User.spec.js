@@ -15,3 +15,4 @@ test("test that user can be created", ()=>{
     user.lastName="Sam"; user.phoneNumber="090"; user.password="1212";
     expect(user.phoneNumber).toBe("090")
 })
+

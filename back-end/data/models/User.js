@@ -1,5 +1,5 @@
 // const { Book } = require("../models/Book.js");
-const {Person} = require("./Person");
+const {Person} = require("../models/Person");
 
 
 class  User extends Person{

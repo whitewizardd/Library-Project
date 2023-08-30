@@ -1,4 +1,4 @@
-import {Person} from "./Person";
+const {Person} = require("../models/Person");
 
 class  Admin extends Person{
     #password;
