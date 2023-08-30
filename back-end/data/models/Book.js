@@ -1,41 +1,46 @@
-
-
 class Book{
-    constructor(title, status, author, ISBN, available_status) {
-        this._title = title;
-        this._status = status;
-        this._author = author;
-        this._ISBN = ISBN;
-        this._available_status = available_status;
+    #title;
+    #author;
+    #ISBN;
+    #isAvailable;
+    #noOfCopies;
+    get noOfCopies() {
+        return this.#noOfCopies;
+    }
+    set noOfCopies(value) {
+        this.#noOfCopies = value;
     }
     get title() {
-        return this._title;
+        return this.#title;
     }
     set title(value) {
-        this._title = value;
-    }
-    get status() {
-        return this._status;
-    }
-    set status(value) {
-        this._status = value;
+        this.#title = value;
     }
     get author() {
-        return this._author;
+        return this.#author;
     }
     set author(value) {
-        this._author = value;
+        this.#author = value;
     }
     get ISBN() {
-        return this._ISBN;
+        return this.#ISBN;
     }
     set ISBN(value) {
-        this._ISBN = value;
+        this.#ISBN = value;
     }
-    get available_status() {
-        return this._available_status;
+    get isAvailable() {
+        return this.#isAvailable;
     }
-    set available_status(value) {
-        this._available_status = value;
+    set isAvailable(value) {
+        this.#isAvailable = value;
+    }
+    get toString(){
+        return this.title +"\n"+
+            this.author +"\n"+
+            this.isAvailable +"\n"+
+            this.ISBN+"\n"+
+            this.noOfCopies
     }
 }
+// const b = new Book();
+module.exports = { Book }
