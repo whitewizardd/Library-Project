@@ -135,14 +135,14 @@ h1,h2{
 .container .header .nav .user .img-case img{
     position: absolute;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
 .container .content{
     position: relative;
-    margin-top: 25vh;
-    min-height: 10vh;
+    margin-top: 10vh;
+    min-height: 90vh;
 }
 
 .container .content .cards{
@@ -154,5 +154,14 @@ h1,h2{
 }
 
 .container .content .cards .card{
+    width: 250%;
+    height: 60px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19)
     
 }
