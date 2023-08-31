@@ -12,7 +12,7 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing:border-box,
+    box-sizing:border-box;
 }
 
 body {
@@ -30,15 +30,16 @@ a{
     text-decoration: none;
 }
 .search-container{
-    background-color: var(--md-dark-color);
-    height: 180px;
+    /* background-color: var(--dark-color); */
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0.5rem;
 }
 .logo{
     font-size: 2rem;
-    color:#fff;
+    color:#ffffff;
     font-weight: bold;
 }
 .logo p span{
@@ -46,11 +47,13 @@ a{
 }
 .search-element{
     align-self: center;
-    margin-right: 1rem;
-    font-size: 2rem;
-    color: #fff;
+    margin-right: rem;
+    font-size: 1.6rem;
+    color: #e9e517;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    box-shadow: inset 1px 0px;
+    
 }
 .search-element .search-input{
     padding: 1rem 2rem;
@@ -72,3 +75,34 @@ a{
     overflow-y: scroll;
     z-index: 10;
 }
+.borrow-books{
+    position: relative;
+    /* background-color: #3e493e; */
+    border:  none ;
+    color: rgb(119, 44, 44);
+    padding: 10px 24px;
+    text-align: none;
+    text-decoration:  none;
+    display: inline-block;
+    /* font-size: 16px; */
+    left: +10px; 
+    font-size: 0px;
+
+    border:  none;
+    line-height: 2.5;
+    
+    padding: 0 0px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #f8f5f5;
+    text-shadow: 1px 1px 1px #531c1c;
+    border-radius: 80px;
+    
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+    box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 8px rgba(218, 204, 9, 0.6);
+    
+}
+   
+
