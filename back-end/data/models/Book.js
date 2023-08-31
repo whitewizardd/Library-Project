@@ -4,6 +4,7 @@ class Book{
     #ISBN;
     #isAvailable;
     #noOfCopies;
+    #category
     get noOfCopies() {
         return this.#noOfCopies;
     }
@@ -34,6 +35,12 @@ class Book{
     set isAvailable(value) {
         this.#isAvailable = value;
     }
+    get category() {
+        return this.#category;
+    }
+    set category(value) {
+        this.#category = value;
+    }
     get toString(){
         return this.title +"\n"+
             this.author +"\n"+
@@ -42,5 +49,4 @@ class Book{
             this.noOfCopies
     }
 }
-// const b = new Book();
 module.exports = { Book }

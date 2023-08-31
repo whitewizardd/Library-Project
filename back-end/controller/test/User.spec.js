@@ -1,8 +1,9 @@
-const {User} = require("../data/models/User")
-const {Person} = require("../data/models/Person")
-const {Address} = require("..//data/models/Address")
-const {DateOfBirth} = require("..///data/models/DateOfBirth")
+const {User} = require("../../data/models/User")
+const {Person} = require("../Person")
+const {Address} = require("../Address")
+const {DateOfBirth} = require("../DateOfBirth")
 const {expect, test} = require("@jest/globals");
+const {Library} = require("../../data/models/Library");
 test("test that user can be created", ()=>{
     let user = new User();
     let address = new Address();
@@ -14,5 +15,9 @@ test("test that user can be created", ()=>{
     user.dateOfBirth=dob;user.firstName="Oladele";
     user.lastName="Sam"; user.phoneNumber="090"; user.password="1212";
     expect(user.phoneNumber).toBe("090")
+})
+test("user is a member ", ()=>{
+    let library = new Library()
+
 })
 
