@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="admin.css">
     <title>User interface</title>
 </head>
 
@@ -17,10 +17,10 @@
         </div>
         <ul>
             <li><img src="dashboard_1828673.png" alt="">&nbsp; <span>Dashboard</span> </li>
-            <li><img src="book-stack_3389081.png" alt="">&nbsp;<span>Books Read</span> </li>
-            <li><img src="book-stack_3389081.png" alt="">&nbsp;<span>Borrowed Books</span> </li>
-            <li><img src="bookcrossing_10292161.png" alt="">&nbsp;<span>Returned Books</span> </li>
-            <li><img src="book-stack_3389081.png" alt="">&nbsp;<span>All Books</span> </li>
+            <li><img src="user.png" alt="">&nbsp;<span>Users</span> </li>
+            <li><img src="book-stack_3389081.png" alt="">&nbsp;<span>Books</span> </li>
+            <li><img src="interaction.png" alt="">&nbsp;<span>Interactions</span> </li>
+            <li><img src="categories.png" alt="">&nbsp;<span>Categories</span> </li>
             <li><img src="help-web-button.png" alt="">&nbsp; <span>Help</span></li>
             <li><img src="settings.png" alt="">&nbsp;<span>Settings</span> </li>
         </ul>
@@ -33,7 +33,7 @@
                     <button type="submit"><img src="search.png" alt=""></button>
                 </div>
                 <div class="user">
-                    <!-- <a href="#" class="btn">Add New</a> -->
+                    <a href="#" class="btn">Add New</a>
                     <img src="notifications.png" alt="">
                     <div class="img-case">
                         <img src="user.png" alt="">
@@ -45,8 +45,17 @@
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>17</h1>
-                        <h3>Books Read</h3>
+                        <h1>10000</h1>
+                        <h3>Users</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="user.png" alt="">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>100000</h1>
+                        <h3>Books</h3>
                     </div>
                     <div class="icon-case">
                         <img src="book-stack_3389081.png" alt="">
@@ -54,26 +63,17 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>7</h1>
-                        <h3>Borrowed Books</h3>
+                        <h1>10</h1>
+                        <h3>Categories</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="bookcrossing_10292161.png" alt="">
+                        <img src="categories.png" alt="">
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>8</h1>
-                        <h3>Returned Books</h3>
-                    </div>
-                    <div class="icon-case">
-                        <img src="bookcrossing_10292161.png" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1>32</h1>
-                        <h3>All books</h3>
+                        <h1>500</h1>
+                        <h3>Readers</h3>
                     </div>
                     <div class="icon-case">
                         <img src="readingabook.png" alt="">
@@ -83,41 +83,44 @@
             <div class="content-2">
                 <div class="recent-readers">
                     <div class="title">
-                        <h2>Recent Books</h2>
+                        <h2>Recent Readers</h2>
                         <a href="#" class="btn">View All</a>
                     </div>
                     <table>
                         <tr>
-                            
+                            <th>Name</th>
                             <th>Book</th>
                             <th>Pages</th>
-                            
+                            <th>Option</th>
                         </tr>
                         <tr>
-                            <td>Harry Porter</td>
-                            <td>350</td>
-                           
+                            <td>Dele Samuel</td>
+                            <td>Coding is life</td>
+                            <td>50</td>
                             <td><a href="#" class="btn">View</a></td>
                         </tr>
                         <tr>
-                            <td>Harry Porter</td>
-                            <td>350</td>
+                            <td>Bright Bright</td>
+                            <td>Coding Made Easy</td>
+                            <td>120</td>
                             <td><a href="#" class="btn">View</a></td>
                         </tr>
                         <tr>
-                            <td>Harry Porter</td>
-                            <td>350</td>
+                            <td>Joe Adoz</td>
+                            <td>Java Being A cup of Tea</td>
+                            <td>200</td>
                             <td><a href="#" class="btn">View</a></td>
                         </tr>
                         <tr>
-                            <td>Harry Porter</td>
-                            <td>350</td>
+                            <td>Heylnati</td>
+                            <td>Code Wars</td>
+                            <td>98</td>
                             <td><a href="#" class="btn">View</a></td>
                         </tr>
                         
                     </table>
                 </div>
-                <!-- <div class="new-readers">
+                <div class="new-readers">
                     <div class="title">
                         <h2>New Readers</h2>
                         <a href="#" class="btn">View All</a>
@@ -150,7 +153,7 @@
                         </tr>
 
                     </table>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

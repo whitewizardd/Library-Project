@@ -23,18 +23,18 @@ h2 {
 h3 {
     color: #999;
 }
-/* .btn {
-    background: #2e2323;
+.btn {
+    background: #1b1717;
     color: white;
     padding: 5px 10px;
     text-align: center;
-} */
-/* .btn:hover {
+}
+.btn:hover {
     color: #f0cc54;
     background: white;
     padding: 3px 8px;
     border: 2px solid #f0d954;
-} */
+}
 .title {
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@ td {
 }
 .side-menu {
     position: fixed;
-    background: #3a2626;
+    background: #1b1717;
     width: 20vw;
     min-height: 100vh;
     display: flex;
