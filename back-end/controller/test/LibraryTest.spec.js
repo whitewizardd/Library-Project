@@ -1,5 +1,5 @@
-const {Library} = require("../data/models/Library")
-const {Book} = require("../data/models/Book");
+const {Library} = require("../../data/models/Library")
+const {Book} = require("../../data/models/Book");
 const {expect, test} = require("@jest/globals");
 // const {expect} = require("@jest/globals");
 // const {test} = require("@jest/globals");
