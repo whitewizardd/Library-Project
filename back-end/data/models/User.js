@@ -39,9 +39,6 @@ class  User {
         return this.#listOfBorrowedBook;
     }
 
-    set listOfBorrowedBook(value) {
-        this.#listOfBorrowedBook = value;
-    }
     get isLoggedIn() {
         return this.#isLoggedIn;
     }

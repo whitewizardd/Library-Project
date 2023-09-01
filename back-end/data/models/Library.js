@@ -1,13 +1,16 @@
-const {Book} = require("./Book");
+const {Book} = require("./Book.js");
 const {User} = require("./User");
 const {Mapper} = require("../mapper/Mapper");
 const {InvalidLoginCredential} = require("../../exception/library/InvalidLoginCredential");
 const {OutOfStock} = require("../../exception/library/OutOfStock");
+const {BorrowBook} = require("./BorrowBook");
+const {EmailExistException} = require("../../exception/userException/EmailExistException");
 
 class Library{
     #listOfBooks = []
     #listOfUsers = []
     set addBook(book) {
+        let a = new Book();
         this.#listOfBooks.push(book);
         return `${book.title} by ${book.author} added successfully`;
     }
@@ -21,60 +24,67 @@ class Library{
     }
     #searchTitle(title){
         return this.#listOfBooks
-            .indexOf((this.#listOfBooks
-                .find(titleIs => titleIs===title)));
+            .indexOf(this.#listOfBooks
+                .find(x => x.title === title))
     }
     searchByTitle(title) {
-        return this.#searchTitle(title);
-    }
-    findAll() {
-        return this.#listOfBooks;
+        return this
+            .#listOfBooks.
+            at(this.#searchTitle(title))
     }
     get listOfBooks() {
         return this.#listOfBooks;
     }
-    set listOfBooks(value) {
-        this.#listOfBooks = value;
-    }
     get listOfUsers() {
-        return this.#listOfUsers;
+        return this
+            .#listOfUsers;
     }
     createUser(newUser) {
         let user = Mapper.map(newUser);
+        for (let us of this.#listOfUsers){
+            if (us.email === user.email){
+                throw new
+                EmailExistException("Email already exist")
+            }
+        }
         this.#listOfUsers.push(user);
         return user;
     }
     login(email, password) {
-        for (let user of this.#listOfUsers){
-            if (user.email===email && user.password===password){
-                user.isLoggedIn=true;
-                return user
+        for (let person of this.#listOfUsers){
+            if (person.email===email && person.password===password){
+                person.isLoggedIn=true;
+                return person
             }
         }
         throw new InvalidLoginCredential("Invalid login details");
     }
     displayUserDashboard(user) {
-        if (user.isLoggedIn === true) {
-            let dashBoardResult = []
+        let dashBoardResult = []
+        if (user.isLoggedIn === true){
             for (let book of this.#listOfBooks) {
-                if (book.category === user.interest) {
+                if (book.category === user.interest){
                     dashBoardResult.push(book)
                 }
             }
-            return dashBoardResult;
         }
+        return dashBoardResult;
     }
-    borrowBook(user, title){
-        if (user.isLoggedIn === true){
-            let book = this.#listOfBooks
-                .at(this.#searchTitle(title))
-            if (book.noOfCopies === 0)
-                throw new OutOfStock(`${book.title} all copies borrowed out...`);
-            else {
-                book.noOfCopies--;
-                return user.borrowBook(book);
-            }
-        }
-    }
+    // borrowBook(user, title){
+    //     // BorrowBook.borrowBook(user, title, this.#listOfBooks);
+    //     if (user.isLoggedIn === true){
+    //         for (let book of this.#listOfBooks){
+    //             if (book.title === title){
+    //                 if (book.noOfCopies === 0){
+    //                     throw new OutOfStock("all copies borrowed out...");
+    //                 }
+    //                 else {
+    //                     book.noOfCopies--;
+    //                     return user.borrowBook(book);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }
 module.exports = {Library}
