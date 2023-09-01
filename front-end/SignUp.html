@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library app</title>
-    <script src="library.js" defer></script>
-    <link rel="stylesheet" href="library2.css">
-    <script src="https://kit.fontawesome.com/3466aeccbb.js" crossorigin="anonymous"></script>
+    <script src="homepage.js" defer></script>
+    <link rel="stylesheet" href="SignUp.css">
+    <script src="" defer></script>
+<!--    <script src="https://kit.fontawesome.com/3466aeccbb.js" crossorigin="anonymous"></script>-->
 </head>
 <body>
 <div class="container">
@@ -16,57 +17,50 @@
             <div class="input-group" id="nameField">
                 <div class="input- field">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" placeholder="fullname">
+                    <input name="full_name" id="full_name" type="text" placeholder="fullname" required>
                 </div>
-
                 <div class="input- field">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="number" placeholder="phonenumber">
+                    <input name="phone_number" id="phone_number" type="number" placeholder="phonenumber" required>
                 </div>
-
                 <div class="input- field">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" placeholder="email">
+                    <input name="mail_to" id="mailing" type="email" placeholder="email" required>
             </div>
-            <select class="drop-down">
+            <select class="drop-down" required>
                 <i class="fa-solid fa-list"></i>
                 <option value="default">interest</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="1">Engineering</option>
+                <option value="2">Science</option>
+                <option value="3">Art</option>
+                <option value="4">Finance</option>
             </select>
                 <div>
                 <div class="input- field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="password">
+                    <input name="first_pass" id="passWord1" type="password" placeholder="password" required>
                 </div>
                     <div class="input- field">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" placeholder="confirm password">
+                    <input name="second_pass" id="passWord2" type="password" placeholder="confirm password" required>
                 </div>
-
                     <div class="btn-field">
-                        <a type="button" id="signUpBtn" href="../signIn/library2.html">sign in</a>
+                        <a type="button" id="signUpBtn" href="homepage.html">sign in</a>
 <!--                        <a style="height: 50%; border: solid 2pt red;"></a>-->
-
-                        <button  type="button" id="check">
-                            <a href="../../front-end/Search/library.html" style="color: white; text-decoration: none; cursor: progress" >sign up</a>
-                        </button>
+                        <button  type="submit" id="check">sign up</button>
                     </div>
                 </div>
+            </div>
         </form>
     </div>
-
 </div>
 
 <!--<script>-->
 <!--    const signUpBtn = document.getElementById('signUpBtn');-->
 <!--    signUpBtn.addEventListener('click', () => {-->
-<!--        href = 'signup/signIn/library2.html';-->
+<!--        href = 'signup/signIn/SignUp.html';-->
 <!--    });-->
 <!--</script>-->
 
 </body>
 </html>
->
