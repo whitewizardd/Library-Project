@@ -1,4 +1,5 @@
 const {User} = require("../models/User");
+const {Book} = require("../models/Book");
 
 class Mapper{
     static map(newUser){
@@ -11,5 +12,15 @@ class Mapper{
         user.isLoggedIn=false
         return user;
     }
+    // static mapBook(newBook){
+    //     let book = new Book();
+    //     book.title=newBook.title
+    //     book.noOfCopies=newBook.noOfCopies
+    //     book.ISBN=newBook.ISBN
+    //     book.category=newBook.category
+    //     book.author=newBook.author
+    //     book.isAvailable=newBook.isAvailable
+    //     return book;
+    // }
 }
 module .exports = {Mapper}

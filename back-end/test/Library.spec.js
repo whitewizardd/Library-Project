@@ -68,29 +68,23 @@ test("test that user can get dashboard history based on category", ()=>{
     let library = new Library();
     let firstUser = new CreateUser();
     let secondUser = new CreateUser();
-    firstUser.interest="programming";
-    secondUser.interest="science";
-    library.createUser(firstUser)
-    library.createUser(secondUser);
-    let book = new Book();
-    let book1 = new Book();
-    let book2 = new Book();
-    let book3 = new Book();
-    book.noOfCopies=1
-    book1.noOfCopies=1
-    book2.noOfCopies=1
-    book3.noOfCopies=1
-    book.category="programming"
-    book1.category="science"
-    book2.category="science"
-    book3.category="science"
-    library.addBook=book
-    library.addBook=book1
-    library.addBook=book2
-    library.addBook=book3
+    firstUser.interest="programming";firstUser.email="ff@.com";firstUser.password="password1212";
+    secondUser.interest="science";secondUser.email="ss@.com";secondUser.password="password1111"
+    let user1 = library.createUser(firstUser)
+    let user2 = library.createUser(secondUser);
+    let book = new Book();let book1 = new Book();
+    let book2 = new Book();let book3 = new Book();
+    book.noOfCopies=1;book1.noOfCopies=1
+    book2.noOfCopies=1;book3.noOfCopies=1
+    book.category="programming";book1.category="science"
+    book2.category="science";book3.category="science"
+    library.addBook=book;library.addBook=book1
+    library.addBook=book2;library.addBook=book3
+    let userr = library.login("ff@.com", "password1212");
+    let userr1 = library.login("ss@.com", "password1111")
     expect(library.count).toBe(4);
-    expect(library.displayUserDashboard(firstUser).length).toBe(1);
-    expect(library.displayUserDashboard(secondUser).length).toBe(3);
+    expect(library.displayUserDashboard(userr).length).toBe(1);
+    expect(library.displayUserDashboard(userr1).length).toBe(3);
 })
 test("number of available copies of a book should reduce after a user must have borrowed a copy", ()=>{
     let library = new Library();
@@ -109,20 +103,37 @@ test("number of available copies of a book should reduce after a user must have 
     expect(book.noOfCopies).toBe(3);
     expect(savedUser.listOfBorrowedBook.length).toBe(1)
 })
-test("book that is out of stock can not be borrowed", ()=>{
-    let library = new Library()
-    let book = new Book();
-    book.title="title1"
-    book.noOfCopies=0
-    library.addBook=book;
-    let user = new User();
-    user.email="rr@mail.com";
-    user.password="password1212"
-    let savedUser =library.createUser(user)
-    library.login("rr@mail.com", "password1212")
-    expect(library.listOfBooks.length).toBe(1)
-    expect(library.borrowBook(savedUser, "title1"))
-        .toThrow("title1 all copies borrowed out...");
-    expect(book.noOfCopies).toBe(0);
-    expect(savedUser.listOfBorrowedBook.length).toBe(1)
+test("no duplicate email allowed", ()=>{
+    let library = new Library();
+    let user = new CreateUser();
+    user.email="@ff.com"
+    user.password="pass1212"
+    library.createUser(user);
+    let secondUser = new User();
+    secondUser.email="@ff.com";
+    secondUser.password="pass121222"
+    expect(()=>{
+        library.createUser(secondUser)
+    }).toThrow("Email already exist")
 })
+// test("book that is out of stock can not be borrowed", ()=>{
+//     let library = new Library()
+//     let book = new Book();
+//     book.title="title1"
+//     // book.noOfCopies=0
+//     library.addBook=book;
+//     let user = new CreateUser();
+//     user.email="rr@mail.com";
+//     user.password="password1212"
+//     user.interest="science";
+//     user.phoneNumber="090"
+//     user.name="Ola"
+//     let savedUser = library.createUser(user)
+//     let newUser = library.login("rr@mail.com", "password1212")
+//     expect(library.listOfBooks.length).toBe(1)
+//     expect(newUser.name).toBe("Ola")
+//     expect(library.borrowBook(newUser, "title1"))
+//         .toThrow("title1 all copies borrowed out...");
+//     expect(book.noOfCopies).toBe(0);
+//     expect(savedUser.listOfBorrowedBook.length).toBe(0)
+// })

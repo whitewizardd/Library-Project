@@ -3,7 +3,7 @@ class Book{
     #author;
     #ISBN;
     #isAvailable;
-    #noOfCopies;
+    #noOfCopies = 0;
     #category
     get noOfCopies() {
         return this.#noOfCopies;
