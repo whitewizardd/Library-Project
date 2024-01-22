@@ -29,9 +29,9 @@ const WelcomePage = () => {
                     <option value="talent">Talent</option>
                 </select>
             </div>
-            <div className="buttons-container">
-                <button className="role-button">Submit</button>
-            </div>
+            {/*<div className="buttons-container">*/}
+            {/*    <button className="role-button">Submit</button>*/}
+            {/*</div>*/}
             <div className="space-down"></div>
             <div className="already-member?">
                 <p>
